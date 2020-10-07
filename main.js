@@ -25,8 +25,7 @@ for(i = 0; i < students.length; i++) {
 // Challenge 2
 // Loop through the following array BACKWARDS, console.logging out each value. 64 should be printed first and 100 last.
 const grades = [100, 80, 110, 75, 83, 64];
-grades.reverse();
-for(i = 0; i < grades.length; i++) {
+for(i = grades.length - 1; i >= 0; i--) {
   console.log(grades[i]);
 }
 
@@ -85,15 +84,18 @@ for(i = 0; i < cars.length; i++) {
 
 // Challenge 9
 // Loop through the `students` array from Challenge 1, starting at index 3 and ending at index 10 (INCLUSIVE), logging out each value individually.
-for(i = 0; i < students.slice(3, 10).length; i++) {
-  console.log(students.slice(3, 10)[i]);
+for(i = 3; i <= 10; i++) {
+  console.log(students[i]);
 }
 
 // Challenge 10
 // Loop through the `students` array from Challenge 1, making a COPY of the array, starting at index 3 and ending at index 10 (INCLUSIVE). This is very similar to string building; create a new array, loop through the old one, and put values from the original in the new one. Then log out each value of the copy indivudally.
-const newStudents = students.slice(3, 10);
-for(i = 0; i < newStudents.length; i++) {
-  console.log(newStudents[i]);
+let newStudent = [];
+for(i = 3; i <= 10; i++) {
+  newStudent.push(students[i]);
+}
+for(i = 0; i < newStudent.length; i++) {
+  console.log(newStudent[i]);
 }
 
 // Challenge 11
@@ -116,7 +118,7 @@ for(i = 0; i < dinosaurs.length; i++) {
 
 // Challenge 13
 // Use .join to change the dinosaur strings from the above array into one string with a '*' string as the "separator". Then console.log out that string.
-console.log(dinosaurs.join(' * '));
+console.log(dinosaurs.join('*'));
 
 // Challenge 14
 // Use .reverse to reverse the dinosaur array and then log out the original array. .reverse DOES change the original array.
@@ -129,9 +131,13 @@ for(i = 0; i < dinosaurs.length; i++) {
 // Use .concat to combine the following two arrays into a NEW array you make (.concat RETURNS an array). Then console.log out each value of that new array individually. Now console.log both the primaries and secondaries arrays, noting that .concat does NOT mutate the original arrays.
 const primaries = ['red', 'yellow', 'blue'];
 const secondaries = ['orange', 'green', 'purple'];
-const combine = primaries.concat(secondaries);
-for(i = 0; i < combine.length; i++) {
-  console.log(combine[i]);
+const concat = primaries.concat(secondaries);
+for(i = 0; i < concat.length; i++) {
+  console.log(concat[i]);
 }
-
-
+for(i = 0; i < primaries.length; i++) {
+  console.log(primaries[i]);
+}
+for(i = 0; i < secondaries.length; i++) {
+  console.log(secondaries[i]);
+}
